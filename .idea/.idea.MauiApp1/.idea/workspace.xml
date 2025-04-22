@@ -11,7 +11,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b37760-6a94-415c-ba46-2c94a925c148" name="Changes" comment="" />
+    <list default="true" id="29b37760-6a94-415c-ba46-2c94a925c148" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiApp1/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/MainPage.xaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,25 +24,31 @@
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SargisBadoyan"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Vardan789/GasStationApp.git",
+    "accountId": "439f8fbe-d0d9-4f15-917b-4f16410e4914"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27de983044c396ef99fde192893e6b22e99195af4dc3f52648736448ba4e/SelectionMode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2e7abfe051fc2945692787de2cc656dd9d3aa06ea18916b49feba15b09732/Frame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37b962f3ad7f397ff9dfae9692925d84056133ad51f531db8d828a78dd15/PenLineJoin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4d76b5c0eb1f9d7749b7d63884edb4010fbcab9475595ac35a59e723f5fc52/Style.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4ec5ac1f1215ce2e9145ebf862faaad6376c59dacb6b776f4cc3fbff59e943/Layout.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/50f7f2d392a842cb84b38f7cca10b21aaa76afd687a682878127509d8c91dd6/StructuredItemsView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/60884bc816c7de93685c96f26f6187dae066ca83b6a3ad1a2ad21294ac062/ScrollView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/758169f2b39d3bf71facc091340292c2cda1ecdd4a2ae62bc4ff1c153492d5/ItemSizingStrategy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a8336096582d3f92407e9166dd789df598636f3d143275b3318d98d1afd1/Border.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a9a3ad82f314b266fa543a9229284c9169d55a2f77d5f5613b6b4e6b4ba076/ScrollBarVisibility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aa43fddc3e325b8f75b97df96ffad96be5a36d8847c82452dca3a57ef9e8f/SelectableItemsView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e13ed51d69eabc1fe9456ba389859722e1318ee9f1599bb77fd65bc56de04333/StyleableElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/saqbadoyan/RiderProjects/GasStationApp/MauiApp1/MainPage.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///usr/local/share/dotnet/packs/Microsoft.MacCatalyst.Sdk.net9.0_18.4/18.4.9288/tools/msbuild/Xamarin.Shared.targets" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
       <facet id="MauiApp1/invalid/Android Facet - MauiApp1" />
     </ignored-facets>
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -48,17 +58,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android.MauiApp1.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UWP.MauiApp1.executor&quot;: &quot;Debug&quot;,
-    &quot;iOS.MauiApp1.executor&quot;: &quot;Debug&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android.MauiApp1.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "UWP.MauiApp1.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "iOS.MauiApp1.executor": "Debug",
+    "macOS.MauiApp1.executor": "Debug",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="UWP.MauiApp1">
+}]]></component>
+  <component name="RunManager" selected="macOS.MauiApp1">
     <configuration name="MauiApp1: Windows Machine" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MauiApp1/MauiApp1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0-android" />
@@ -118,9 +137,14 @@
       <workItem from="1745244648849" duration="1516000" />
       <workItem from="1745318291931" duration="2205000" />
       <workItem from="1745330815335" duration="4070000" />
+      <workItem from="1745350065592" duration="3498000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
