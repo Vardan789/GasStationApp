@@ -42,7 +42,6 @@
                    FontAttributes="Bold"
                    TextColor="White"
                    HorizontalOptions="Center" />
-
             <!-- Stations List -->
             <CollectionView ItemsSource="{Binding Stations}"
                             SelectionMode="None">
