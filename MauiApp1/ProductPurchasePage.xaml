@@ -43,7 +43,7 @@
                         <Entry x:Name="LitersEntry"
                                Keyboard="Numeric"
                                TextChanged="OnLitersChanged"
-                               Placeholder="e.g. 10"
+                               Placeholder="Liters to buy"
                                FontSize="18"
                                TextColor="Gainsboro"
                                PlaceholderColor="#888"

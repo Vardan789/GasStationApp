@@ -1,0 +1,122 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.CardEntryPage"
+             Title="Enter Card Details"
+             BackgroundColor="Black"
+             Shell.TitleColor="Gainsboro"
+             Shell.ForegroundColor="Gainsboro"
+             Shell.BackgroundColor="Black">
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="payment.jpeg"
+               Aspect="AspectFill"
+               Opacity="0.4"
+               IsVisible="True"/>
+
+        <!-- Foreground UI -->
+        <ScrollView>
+            <Grid Padding="30" VerticalOptions="Center" HorizontalOptions="Center">
+                <Frame BackgroundColor="#1E1E1ECC"
+                       CornerRadius="25"
+                       Padding="30"
+                       HasShadow="True"
+                       WidthRequest="400">
+
+                    <VerticalStackLayout Spacing="25">
+
+                        <Label Text="Payment Details"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="Yellow" />
+
+                        <!-- Card Number -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Card Number"
+                                   FontSize="16"
+                                   TextColor="Gainsboro"/>
+
+                            <Frame BackgroundColor="#2C2C2C"
+                                   CornerRadius="12"
+                                   HasShadow="False"
+                                   Padding="10,0"
+                                   HeightRequest="50"
+                                   BorderColor="#444">
+                                <Entry x:Name="CardNumberEntry"
+                                       Keyboard="Numeric"
+                                       Placeholder="1234 5678 9012 3456"
+                                       FontSize="18"
+                                       TextColor="Gainsboro"
+                                       PlaceholderColor="#888"
+                                       BackgroundColor="Transparent"
+                                       HorizontalTextAlignment="Center"
+                                       TextChanged="OnCardNumberChanged"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Expiry Date -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Expiry Date (MM/YY)"
+                                   FontSize="16"
+                                   TextColor="Gainsboro"/>
+                            <Frame BackgroundColor="#2C2C2C"
+                                   CornerRadius="12"
+                                   HasShadow="False"
+                                   Padding="10,0"
+                                   HeightRequest="50"
+                                   BorderColor="#444">
+                                <Entry x:Name="ExpiryDateEntry"
+                                       TextChanged="OnExpiryDateChanged"
+                                       Keyboard="Numeric"
+                                       Placeholder="MM/YY"
+                                       FontSize="18"
+                                       TextColor="Gainsboro"
+                                       PlaceholderColor="#888"
+                                       BackgroundColor="Transparent"
+                                       HorizontalTextAlignment="Center"/>
+
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- CVV -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="CVV"
+                                   FontSize="16"
+                                   TextColor="Gainsboro"/>
+                            <Frame BackgroundColor="#2C2C2C"
+                                   CornerRadius="12"
+                                   HasShadow="False"
+                                   Padding="10,0"
+                                   HeightRequest="50"
+                                   BorderColor="#444">
+                                <Entry x:Name="CvvEntry"
+                                       Keyboard="Numeric"
+                                       Placeholder="123"
+                                       FontSize="18"
+                                       TextColor="Gainsboro"
+                                       PlaceholderColor="#888"
+                                       BackgroundColor="Transparent"
+                                       IsPassword="True"
+                                       HorizontalTextAlignment="Center"
+                                       TextChanged="OnCvvChanged"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Submit Button -->
+                        <Button Text="Submit"
+                                BackgroundColor="Yellow"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                CornerRadius="12"
+                                HeightRequest="50"
+                                Clicked="OnSubmitClicked"
+                                HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>
