@@ -80,7 +80,7 @@
                                                      HorizontalOptions="Center"
                                                      WidthRequest="150"> <!-- Adjust width as needed -->
                                     <Image Source="{Binding Image}"
-                                           WidthRequest="105"
+                                           WidthRequest="300"
                                            HeightRequest="105"
                                            Aspect="AspectFill"/> <!-- AspectFill added here -->
                                     <Label Text="{Binding Title}"

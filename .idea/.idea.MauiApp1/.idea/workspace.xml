@@ -12,9 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29b37760-6a94-415c-ba46-2c94a925c148" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MauiApp1/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauiApp1/Resources/Images/gasstation_bg.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f593732bf19b11e77a0666fbfec4c6f123df92bc43e2199da8d73ad5c79ec8/Aspect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/local/share/dotnet/packs/Microsoft.MacCatalyst.Sdk.net9.0_18.4/18.4.9288/tools/msbuild/Xamarin.Shared.targets" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
@@ -144,6 +145,7 @@
       <workItem from="1745350065592" duration="3780000" />
       <workItem from="1745391555334" duration="27000" />
       <workItem from="1745391585684" duration="3374000" />
+      <workItem from="1745397310385" duration="801000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <option name="closed" value="true" />
