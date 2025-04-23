@@ -1,0 +1,76 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ProductPurchasePage"
+             BackgroundColor="Black"
+             Title="Buy Product"
+             Shell.TitleColor="Gainsboro"
+             Shell.ForegroundColor="Gainsboro"
+             Shell.BackgroundColor="Black">
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="product_background.jpeg"
+               Aspect="AspectFill"
+               Opacity="0.3"
+               IsVisible="True"/>
+
+        <!-- Foreground Content in a Card Style -->
+        <ScrollView>
+            <Grid Padding="30" VerticalOptions="Center" HorizontalOptions="Center">
+                <Frame BackgroundColor="#1E1E1ECC"
+                       CornerRadius="25"
+                       Padding="30"
+                       HasShadow="True"
+                       WidthRequest="400">
+
+                    <VerticalStackLayout Spacing="25">
+                        <Label Text="{Binding Title}"
+                               FontSize="32"
+                               TextColor="Gainsboro"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"/>
+
+                        <Label Text="{Binding Price, StringFormat='Price per liter: ${0:F2}'}"
+                               FontSize="20"
+                               TextColor="#CCCCCC"
+                               HorizontalOptions="Center"/>
+
+                        <Label Text="How many liters do you need ?"
+                               FontSize="18"
+                               TextColor="Gainsboro"
+                               HorizontalOptions="Center"/>
+
+                        <Entry x:Name="LitersEntry"
+                               Keyboard="Numeric"
+                               TextChanged="OnLitersChanged"
+                               Placeholder="e.g. 10"
+                               FontSize="18"
+                               TextColor="Gainsboro"
+                               PlaceholderColor="#888"
+                               BackgroundColor="#2C2C2C"
+                               WidthRequest="100"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               HeightRequest="45"
+                               Margin="0,0,0,10"/>
+
+                        <Label x:Name="TotalPriceLabel"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="LightGreen"
+                               HorizontalOptions="Center"/>
+
+                        <Button Text="Buy"
+                                BackgroundColor="Green"
+                                TextColor="Gainsboro"
+                                FontSize="18"
+                                WidthRequest="120"
+                                HeightRequest="45"
+                                Clicked="OnBuyClicked"
+                                HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

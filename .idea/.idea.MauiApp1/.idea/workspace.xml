@@ -12,9 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29b37760-6a94-415c-ba46-2c94a925c148" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/.name" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/ProductPurchasePage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/ProductPurchasePage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MauiApp1/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/MainPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiApp1/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiApp1/Resources/Images/dotnet_bot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiApp1/Resources/Images/gasstationphoto.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/Resources/Images/gasstationphoto.jpeg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +49,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0af377220c9408cbd62ea67fe823f2da9344a9a6d893a8785e278b8ac79bc6/FontAttributes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f593732bf19b11e77a0666fbfec4c6f123df92bc43e2199da8d73ad5c79ec8/Aspect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MauiApp1/Resources/Fonts/FluentUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/local/share/dotnet/packs/Microsoft.MacCatalyst.Sdk.net9.0_18.4/18.4.9288/tools/msbuild/Xamarin.Shared.targets" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
@@ -58,6 +64,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2w2fZkvQCjh2rjfbknfPZ15BwK1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -145,7 +154,10 @@
       <workItem from="1745350065592" duration="3780000" />
       <workItem from="1745391555334" duration="27000" />
       <workItem from="1745391585684" duration="3374000" />
-      <workItem from="1745397310385" duration="801000" />
+      <workItem from="1745397310385" duration="1077000" />
+      <workItem from="1745403038734" duration="1376000" />
+      <workItem from="1745405749325" duration="113000" />
+      <workItem from="1745405864992" duration="10812000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <option name="closed" value="true" />
@@ -155,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745355227280</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed">
+      <option name="closed" value="true" />
+      <created>1745399409146</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745399409146</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixed">
+      <option name="closed" value="true" />
+      <created>1745399505286</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745399505286</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +194,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

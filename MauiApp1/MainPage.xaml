@@ -2,7 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage"
              BackgroundColor="Black"
-             Title="Home">
+             Title="Home"
+             Shell.TitleColor="Gainsboro"
+             Shell.ForegroundColor="Gainsboro"
+             Shell.BackgroundColor="Black">
 
     <Grid>
         <!-- Background Image -->
@@ -14,6 +17,47 @@
         <!-- Foreground Content -->
         <ScrollView>
             <VerticalStackLayout Padding="20" Spacing="30">
+
+                <!-- Welcome Banner with Background Image -->
+                <Grid HeightRequest="400" WidthRequest="1200">
+                    <Image Source="gasstationphoto.jpeg"
+                           Aspect="AspectFill"
+                           Opacity="0.5"/>
+                    <HorizontalStackLayout HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Spacing="10">
+                        <Image Source="fuel_icon.png" HeightRequest="28" WidthRequest="28"/>
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="Welcome – Your Smart Way to Find"
+                                   TextColor="Gainsboro"
+                                   FontSize="45"
+                                   FontFamily="Arial"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="and Purchase Quality Fuel Stations"
+                                   TextColor="Gainsboro"
+                                   FontSize="40"
+                                   FontFamily="Arial"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Grid>
+
+                <!-- Fuel Products Banner -->
+                <Grid HeightRequest="100">
+                    <Image Source="station_background.jpg"
+                           Aspect="AspectFill"
+                           Opacity="0.5"/>
+                    <HorizontalStackLayout HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Spacing="10">
+                        <Image Source="fuel_icon.png" HeightRequest="26" WidthRequest="26"/>
+                        <Label Text="Fuel Products"
+                               TextColor="Gainsboro"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               FontFamily="Arial"/>
+                    </HorizontalStackLayout>
+                </Grid>
 
                 <!-- Slider Bar (Product Pills) -->
                 <ScrollView Orientation="Horizontal"
@@ -27,16 +71,20 @@
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Border Stroke="#444"
-                                        WidthRequest="100"
-                                        HeightRequest="80"
+                                        WidthRequest="130"
+                                        HeightRequest="100"
                                         StrokeThickness="2"
                                         Background="#1a1a1a"
                                         StrokeShape="RoundRectangle 20"
                                         Padding="10"
                                         Margin="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnProductTapped" />
+                                    </Border.GestureRecognizers>
+
                                     <VerticalStackLayout Spacing="2" VerticalOptions="CenterAndExpand">
                                         <Label Text="{Binding Title}"
-                                               TextColor="White"
+                                               TextColor="Gainsboro"
                                                FontAttributes="Bold"
                                                FontSize="14"
                                                HorizontalTextAlignment="Center"/>
@@ -51,15 +99,25 @@
                     </FlexLayout>
                 </ScrollView>
 
-                <!-- Stations Header -->
-                <Label Text="Nearby Stations"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       TextColor="White"
-                       HorizontalOptions="Center" />
+                <!-- Nearby Stations Banner with Background Image -->
+                <Grid HeightRequest="100">
+                    <Image Source="station_background.jpg"
+                           Aspect="AspectFill"
+                           Opacity="0.5"/>
+                    <HorizontalStackLayout HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Spacing="10">
+                        <Image Source="station_icon.png" HeightRequest="26" WidthRequest="26"/>
+                        <Label Text="Nearby Stations"
+                               TextColor="Gainsboro"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               FontFamily="Arial"/>
+                    </HorizontalStackLayout>
+                </Grid>
 
                 <!-- Stations Grid -->
-                <CollectionView ItemsSource="{Binding Stations}"
+                <CollectionView ItemsSource="{Binding Stations}" MaximumWidthRequest="1700"
                                 SelectionMode="None">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"
@@ -78,16 +136,16 @@
                                     Margin="5">
                                 <VerticalStackLayout Spacing="10"
                                                      HorizontalOptions="Center"
-                                                     WidthRequest="150"> <!-- Adjust width as needed -->
+                                                     WidthRequest="150">
                                     <Image Source="{Binding Image}"
                                            WidthRequest="300"
                                            HeightRequest="105"
-                                           Aspect="AspectFill"/> <!-- AspectFill added here -->
+                                           Aspect="AspectFill"/>
                                     <Label Text="{Binding Title}"
                                            FontSize="15"
                                            FontAttributes="Bold"
                                            HorizontalTextAlignment="Center"
-                                           TextColor="White"/>
+                                           TextColor="Gainsboro"/>
                                     <Label Text="{Binding Address}"
                                            FontSize="10"
                                            HorizontalTextAlignment="Center"

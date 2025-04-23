@@ -4,6 +4,7 @@ public partial class MainPage : ContentPage
 {
     public MainPage()
     {
+        
         var mockData = new HomePageDataDto
         {
             Products = new List<HomePageDataProductDto>
@@ -193,6 +194,16 @@ public partial class MainPage : ContentPage
         };
         InitializeComponent();
         BindingContext = mockData;
+    }
+   
+    private async void OnProductTapped(object sender, EventArgs e)
+    {
+        var tappedProduct = (sender as BindableObject)?.BindingContext as HomePageDataProductDto;
+
+        if (tappedProduct != null)
+        {
+            await Navigation.PushAsync(new ProductPurchasePage(tappedProduct));
+        }
     }
 }
 
