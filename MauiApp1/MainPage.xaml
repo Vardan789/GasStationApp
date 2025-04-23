@@ -6,7 +6,7 @@
 
     <Grid>
         <!-- Background Image -->
-        <Image Source="gasstationphoto.jpeg"
+        <Image Source="shell.jpg"
                Aspect="AspectFill"
                Opacity="0.3"
                IsVisible="True"/>
@@ -15,7 +15,7 @@
         <ScrollView>
             <VerticalStackLayout Padding="20" Spacing="30">
 
-                <!-- Slider Bar (Product Pills) with Fixed Height and Spacing -->
+                <!-- Slider Bar (Product Pills) -->
                 <ScrollView Orientation="Horizontal"
                             HorizontalScrollBarVisibility="Never"
                             HeightRequest="100">
@@ -33,7 +33,7 @@
                                         Background="#1a1a1a"
                                         StrokeShape="RoundRectangle 20"
                                         Padding="10"
-                                        Margin="10,0"> <!-- spacing between fuel tabs -->
+                                        Margin="10,0">
                                     <VerticalStackLayout Spacing="2" VerticalOptions="CenterAndExpand">
                                         <Label Text="{Binding Title}"
                                                TextColor="White"
@@ -58,33 +58,38 @@
                        TextColor="White"
                        HorizontalOptions="Center" />
 
-                <!-- Stations List -->
+                <!-- Stations Grid -->
                 <CollectionView ItemsSource="{Binding Stations}"
                                 SelectionMode="None">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" Span="4"/>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="4"
+                                         HorizontalItemSpacing="30"
+                                         VerticalItemSpacing="30"/>
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Border Stroke="#444"
-                                    StrokeThickness="1"
                                     Background="#1a1a1a"
+                                    StrokeThickness="1"
                                     StrokeShape="RoundRectangle 20"
-                                    Padding="10"
-                                    Margin="15,5"> <!-- spacing between station cards -->
-                                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                                    Padding="5"
+                                    Margin="5">
+                                <VerticalStackLayout Spacing="10"
+                                                     HorizontalOptions="Center"
+                                                     WidthRequest="150"> <!-- Adjust width as needed -->
                                     <Image Source="{Binding Image}"
-                                           WidthRequest="120"
-                                           HeightRequest="120"
-                                           Aspect="AspectFill"/>
+                                           WidthRequest="105"
+                                           HeightRequest="105"
+                                           Aspect="AspectFill"/> <!-- AspectFill added here -->
                                     <Label Text="{Binding Title}"
-                                           FontSize="16"
+                                           FontSize="15"
                                            FontAttributes="Bold"
                                            HorizontalTextAlignment="Center"
                                            TextColor="White"/>
                                     <Label Text="{Binding Address}"
-                                           FontSize="12"
+                                           FontSize="10"
                                            HorizontalTextAlignment="Center"
                                            TextColor="#CCCCCC"/>
                                 </VerticalStackLayout>
@@ -92,6 +97,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
