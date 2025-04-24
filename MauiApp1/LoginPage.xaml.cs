@@ -18,7 +18,7 @@ namespace MauiApp1
 
                 // Optionally, you could use a delay here for better UX if needed:
                  await Task.Delay(300);
-                 Application.Current.MainPage = new NavigationPage(new MainPage());
+                 Application.Current.MainPage = new AppShell();
             }
             else
             {

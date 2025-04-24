@@ -1,0 +1,70 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MyQrHistory"
+             Title="My QR Codes"
+             Shell.TitleColor="Gainsboro"
+             Shell.ForegroundColor="Gainsboro"
+             Shell.BackgroundColor="Black">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Page Title -->
+            <Label Text="My QR Code History"
+                   FontSize="28"
+                   TextColor="Gainsboro"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   Padding="0,0,0,10"/>
+
+            <!-- CollectionView for QR Codes -->
+            <CollectionView x:Name="QRListView" ItemsSource="{Binding Items}" 
+                            BackgroundColor="Transparent">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#333" BackgroundColor="#222" 
+                               CornerRadius="10" Padding="15" Margin="10" HasShadow="True">
+                            <VerticalStackLayout Spacing="10">
+                                <!-- Product Title and Divider -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding ProductTitle}" 
+                                           TextColor="White" 
+                                           FontSize="20" 
+                                           FontAttributes="Bold" 
+                                           Grid.Column="0" 
+                                           VerticalOptions="Center" />
+
+                                    <!-- Divider Line -->
+                                    <BoxView HeightRequest="2" 
+                                             BackgroundColor="Gray" 
+                                             Grid.Column="1" 
+                                             Margin="5,0" />
+                                </Grid>
+
+                                <!-- Purchase Date -->
+                                <Label Text="{Binding PurchaseDate, StringFormat='Purchased: {0:MM/dd/yyyy HH:mm}'}"
+                                       TextColor="Gray" 
+                                       FontSize="14" 
+                                       HorizontalOptions="Start"
+                                       Padding="0,0,0,5"/>
+
+                                <!-- QR Code Image -->
+                                <Image Source="{Binding QRCodeImageBase64}" 
+                                       HeightRequest="150" 
+                                       WidthRequest="150" 
+                                       Aspect="AspectFill" 
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="CenterAndExpand"/>
+
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

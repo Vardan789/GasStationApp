@@ -69,6 +69,12 @@ namespace MauiApp1
                 return;
             }
 
+            MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
+            {
+                ProductTitle = _product.Title,
+                QRCodeImageBase64 = "https://upload.wikimedia.org/wikipedia/commons/8/8a/Qr-2.png", // temporary sample image
+                PurchaseDate = DateTime.Now
+            });
             // Navigate to QR page
             await Navigation.PushAsync(new QrPage());
         }
