@@ -58,10 +58,19 @@ namespace MauiApp1
 
             entry.Text = formatted;
         }
-
         private async void OnSubmitClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Success", "Payment details submitted successfully.", "OK");
+            // Simulate validation
+            if (string.IsNullOrWhiteSpace(CardNumberEntry.Text) ||
+                string.IsNullOrWhiteSpace(ExpiryDateEntry.Text) ||
+                string.IsNullOrWhiteSpace(CvvEntry.Text))
+            {
+                await DisplayAlert("Error", "Please fill in all fields correctly.", "OK");
+                return;
+            }
+
+            // Navigate to QR page
+            await Navigation.PushAsync(new QrPage());
         }
     }
 }

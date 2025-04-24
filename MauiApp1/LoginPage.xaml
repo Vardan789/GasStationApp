@@ -1,0 +1,92 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.LoginPage"
+             Title="Login"
+             BackgroundColor="Black">
+
+    <!-- Background Image -->
+    <Grid>
+        <Image Source="login.jpeg"
+               Aspect="AspectFill"
+               Opacity="0.4" />
+
+        <ScrollView>
+            <Grid Padding="30" VerticalOptions="CenterAndExpand">
+                <Frame BackgroundColor="#1E1E1E"
+                       CornerRadius="25"
+                       Padding="30"
+                       HasShadow="True"
+                       WidthRequest="350">
+
+                    <VerticalStackLayout Spacing="20">
+
+                        <!-- Title -->
+                        <Label Text="Login"
+                               FontSize="36"
+                               FontAttributes="Bold"
+                               TextColor="#FACC15"
+                               HorizontalOptions="Center" />
+
+                        <!-- Username Entry wrapped in Frame -->
+                        <Frame BackgroundColor="#2C2C2C"
+                               CornerRadius="10"
+                               HeightRequest="50"
+                               Padding="10"
+                               BorderColor="#444">
+                            <Entry x:Name="UsernameEntry"
+                                   Placeholder="Username"
+                                   TextColor="Gainsboro"
+                                   PlaceholderColor="#888"
+                                   BackgroundColor="Transparent"
+                                   FontSize="18"
+                                   HorizontalTextAlignment="Center" />
+                        </Frame>
+
+                        <!-- Password Entry wrapped in Frame with Eye Icon -->
+                        <Frame BackgroundColor="#2C2C2C"
+                               CornerRadius="10"
+                               HeightRequest="50"
+                               Padding="10"
+                               BorderColor="#444">
+                            <Entry x:Name="PasswordEntry"
+                                   Placeholder="Password"
+                                   IsPassword="True"
+                                   TextColor="Gainsboro"
+                                   PlaceholderColor="#888"
+                                   BackgroundColor="Transparent"
+                                   FontSize="18"
+                                   HorizontalTextAlignment="Center" />
+                        </Frame>
+
+                        <!-- Eye Icon to toggle password visibility -->
+                        <ImageButton Source="eye_icon.png"
+                                     HorizontalOptions="End"
+                                     VerticalOptions="Center"
+                                     Clicked="OnEyeIconClicked"
+                                     WidthRequest="30" HeightRequest="30"
+                                     Margin="0,0,10,0" />
+
+                        <!-- Login Button -->
+                        <Button Text="Login"
+                                FontSize="18"
+                                Clicked="OnLoginClicked"
+                                BackgroundColor="#FACC15"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                CornerRadius="15"
+                                HeightRequest="50" />
+
+                        <!-- Sign-up Button -->
+                        <Button Text="Don't have an account? Sign up"
+                                Clicked="OnNavigateToSignUpClicked"
+                                BackgroundColor="Transparent"
+                                TextColor="LightGray"
+                                FontSize="14"
+                                HorizontalOptions="Center" />
+
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

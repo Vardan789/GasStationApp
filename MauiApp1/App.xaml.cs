@@ -9,6 +9,12 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new Window(new AppShell());
+        /*bool isLoggedIn = CheckLoginStatus();
+        return new Window(isLoggedIn ? new AppShell() : new NavigationPage(new LoginPage()));bool isLoggedIn = CheckLoginStatus();
+        return new Window(isLoggedIn ? new AppShell() : new NavigationPage(new LoginPage()));*/
+        
+        // Use LoginPage for now instead of AppShell
+        return new Window(new NavigationPage(new LoginPage()));
     }
+    
 }

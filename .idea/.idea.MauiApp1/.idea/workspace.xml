@@ -12,11 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29b37760-6a94-415c-ba46-2c94a925c148" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MauiApp1/CardEntryPage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MauiApp1/CardEntryPage.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/LoginPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/LoginPage.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/QrPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/QrPage.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/SignUpPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MauiApp1/SignUpPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MauiApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauiApp1/ProductPurchasePage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/ProductPurchasePage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauiApp1/ProductPurchasePage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/ProductPurchasePage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiApp1/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiApp1/CardEntryPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiApp1/CardEntryPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,28 +76,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android.MauiApp1.executor": "Debug",
-    "Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: MauiApp1": "iPhone 16",
-    "DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider": "Simulator",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "UWP.MauiApp1.executor": "Debug",
-    "git-widget-placeholder": "master",
-    "iOS.MauiApp1.executor": "Debug",
-    "macOS.MauiApp1.executor": "Debug",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android.MauiApp1.executor&quot;: &quot;Debug&quot;,
+    &quot;Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: MauiApp1&quot;: &quot;iPhone 16&quot;,
+    &quot;DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider&quot;: &quot;Simulator&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;UWP.MauiApp1.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;iOS.MauiApp1.executor&quot;: &quot;Debug&quot;,
+    &quot;macOS.MauiApp1.executor&quot;: &quot;Debug&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="iOS.MauiApp1">
+}</component>
+  <component name="RunManager" selected="macOS.MauiApp1">
     <configuration name="MauiApp1: Windows Machine" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MauiApp1/MauiApp1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0-android" />
@@ -160,7 +164,9 @@
       <workItem from="1745403038734" duration="1376000" />
       <workItem from="1745405749325" duration="113000" />
       <workItem from="1745405864992" duration="10882000" />
-      <workItem from="1745434752197" duration="5605000" />
+      <workItem from="1745434752197" duration="5704000" />
+      <workItem from="1745478339103" duration="688000" />
+      <workItem from="1745479032349" duration="5901000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <option name="closed" value="true" />
@@ -194,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745421470112</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed">
+      <option name="closed" value="true" />
+      <created>1745441074336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745441074336</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
