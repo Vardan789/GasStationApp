@@ -205,6 +205,13 @@ public partial class MainPage : ContentPage
             await Navigation.PushAsync(new ProductPurchasePage(tappedProduct));
         }
     }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        StationsGridLayout.Span = DeviceInfo.Idiom == DeviceIdiom.Phone ? 2 : 4;
+        MainBannerGridLayout.WidthRequest = DeviceInfo.Idiom == DeviceIdiom.Phone ? 350 : 1200;
+    }
 }
 
 public class HomePageDataDto

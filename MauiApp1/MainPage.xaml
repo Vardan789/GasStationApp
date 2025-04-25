@@ -19,10 +19,10 @@
             <VerticalStackLayout Padding="20" Spacing="30">
 
                 <!-- Welcome Banner with Background Image -->
-                <Grid HeightRequest="400" WidthRequest="1200">
+                <Grid x:Name="MainBannerGridLayout" HeightRequest="400" WidthRequest="1200">
                     <Image Source="banner.jpeg"
                            Aspect="AspectFill"
-                           Opacity="0.9"/>
+                           Opacity="1"/>
                     <HorizontalStackLayout HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            Spacing="10">
@@ -146,10 +146,10 @@
                 </Grid>
 
                 <!-- Stations Grid -->
-                <CollectionView ItemsSource="{Binding Stations}" MaximumWidthRequest="1700"
-                                SelectionMode="None">
+                <CollectionView   ItemsSource="{Binding Stations}" MaximumWidthRequest="1700"
+                                 SelectionMode="None">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical"
+                        <GridItemsLayout x:Name="StationsGridLayout" Orientation="Vertical"
                                          Span="4"
                                          HorizontalItemSpacing="30"
                                          VerticalItemSpacing="30"/>
