@@ -1,6 +1,5 @@
 using QRCoder;
-using System.IO;
-using Microsoft.Maui.Storage; // For FileSystem
+
 
 namespace MauiApp1
 {
