@@ -53,7 +53,7 @@
                                        Padding="0,0,0,5"/>
 
                                 <!-- QR Code Image -->
-                                <Image Source="{Binding QRCodeImageBase64}" 
+                                <Image Source="{Binding QRCodeImageSource}" 
                                        HeightRequest="150" 
                                        WidthRequest="150" 
                                        Aspect="AspectFill" 

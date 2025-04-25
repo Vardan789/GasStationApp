@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.QrPage"
              Title="QR Code"
-             BackgroundColor="Black">
-
+             Shell.TitleColor="Gainsboro"
+             Shell.ForegroundColor="Gainsboro"
+             Shell.BackgroundColor="Black">
+    
     <Grid Padding="20" VerticalOptions="CenterAndExpand">
-
         <Frame BackgroundColor="#1E1E1E"
                CornerRadius="25"
                Padding="30"
@@ -23,7 +24,8 @@
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center" />
 
-                <Image Source="qr.jpeg"
+                <!-- Image control to display the QR code -->
+                <Image x:Name="qrImage"
                        WidthRequest="220"
                        HeightRequest="220"
                        Aspect="AspectFit"
@@ -34,6 +36,8 @@
                        FontSize="15"
                        HorizontalTextAlignment="Center"
                        LineBreakMode="WordWrap" />
+
+                <!-- Remove the "Generate QR Code" button since it's not needed anymore -->
 
                 <Button Text="Done"
                         Clicked="OnDoneClicked"
@@ -48,6 +52,5 @@
 
             </VerticalStackLayout>
         </Frame>
-
     </Grid>
 </ContentPage>

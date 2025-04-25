@@ -7,22 +7,31 @@ namespace MauiApp1
             InitializeComponent();
         }
 
-        private async void OnLoginClicked(object sender, EventArgs e)
+        private void OnLoginClicked(object sender, EventArgs e)
         {
             string username = UsernameEntry.Text;
             string password = PasswordEntry.Text;
 
+            // Check if username or password is empty or null
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                // Show error if either field is empty
+                ErrorLabel.Text = "Please enter both username and password.";
+                ErrorLabel.IsVisible = true;
+                return;  // Exit the method early
+            }
+
+            // Check if the user exists and if the password matches
             if (MockAuth.Users.TryGetValue(username, out string storedPass) && storedPass == password)
             {
-                //Application.Current.MainPage = new NavigationPage(new MainPage());
-
-                // Optionally, you could use a delay here for better UX if needed:
-                 await Task.Delay(300);
-                 Application.Current.MainPage = new AppShell();
+                // If credentials are correct, navigate to the home page (AppShell)
+                Application.Current.MainPage = new AppShell();  // Redirect to AppShell (home page)
             }
             else
             {
-                await DisplayAlert("Error", "Invalid credentials", "OK");
+                // If credentials are invalid, show an error and stay on the login page
+                ErrorLabel.Text = "Invalid username or password.";
+                ErrorLabel.IsVisible = true;  // Show the error message label
             }
         }
 

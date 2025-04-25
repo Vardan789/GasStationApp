@@ -69,14 +69,19 @@ namespace MauiApp1
                 return;
             }
 
+            // Generate the QR text with liters
+            string qrText = $"Fuel QR Code: {_liters} liters purchased at {_product.Title}";
+
+            // Add purchase history (simulated)
             MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
             {
                 ProductTitle = _product.Title,
-                QRCodeImageBase64 = "https://upload.wikimedia.org/wikipedia/commons/8/8a/Qr-2.png", // temporary sample image
+                QRCodeImageSource = ImageSource.FromUri(new Uri("https://upload.wikimedia.org/wikipedia/commons/8/8a/Qr-2.png")), // temporary sample image
                 PurchaseDate = DateTime.Now
             });
-            // Navigate to QR page
-            await Navigation.PushAsync(new QrPage());
+
+            // Navigate to QR page and pass the QR text
+            await Navigation.PushAsync(new QrPage(qrText));
         }
     }
 }

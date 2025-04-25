@@ -4,7 +4,6 @@
              Title="Login"
              BackgroundColor="Black">
 
-    <!-- Background Image -->
     <Grid>
         <Image Source="login.jpeg"
                Aspect="AspectFill"
@@ -48,23 +47,36 @@
                                HeightRequest="50"
                                Padding="10"
                                BorderColor="#444">
-                            <Entry x:Name="PasswordEntry"
-                                   Placeholder="Password"
-                                   IsPassword="True"
-                                   TextColor="Gainsboro"
-                                   PlaceholderColor="#888"
-                                   BackgroundColor="Transparent"
-                                   FontSize="18"
-                                   HorizontalTextAlignment="Center" />
+                            <Grid>
+                                <!-- Password Entry -->
+                                <Entry x:Name="PasswordEntry"
+                                       Placeholder="Password"
+                                       IsPassword="True"
+                                       TextColor="Gainsboro"
+                                       PlaceholderColor="#888"
+                                       BackgroundColor="Transparent"
+                                       FontSize="18"
+                                       HorizontalTextAlignment="Center" />
+
+                                <!-- Eye Icon at the end of the password entry field -->
+                                <ImageButton Source="eye.jpeg"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="End"
+                                             Clicked="OnEyeIconClicked"
+                                             WidthRequest="1" 
+                                             HeightRequest="1"
+                                             Opacity="0.1"
+                                             Margin="-0,0,0,0" />
+                            </Grid>
                         </Frame>
 
-                        <!-- Eye Icon to toggle password visibility -->
-                        <ImageButton Source="eye_icon.png"
-                                     HorizontalOptions="End"
-                                     VerticalOptions="Center"
-                                     Clicked="OnEyeIconClicked"
-                                     WidthRequest="30" HeightRequest="30"
-                                     Margin="0,0,10,0" />
+                        <Label x:Name="ErrorLabel"
+                               Text="Invalid username or password"
+                               TextColor="Red"
+                               IsVisible="False"
+                               HorizontalOptions="Center"
+                               FontSize="14"
+                               Padding="10, 5, 10, 0"/>
 
                         <!-- Login Button -->
                         <Button Text="Login"
@@ -75,7 +87,7 @@
                                 FontAttributes="Bold"
                                 CornerRadius="15"
                                 HeightRequest="50" />
-
+                        
                         <!-- Sign-up Button -->
                         <Button Text="Don't have an account? Sign up"
                                 Clicked="OnNavigateToSignUpClicked"
@@ -83,7 +95,6 @@
                                 TextColor="LightGray"
                                 FontSize="14"
                                 HorizontalOptions="Center" />
-
                     </VerticalStackLayout>
                 </Frame>
             </Grid>

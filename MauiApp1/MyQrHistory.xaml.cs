@@ -6,22 +6,7 @@
         {
             InitializeComponent();
 
-            // Adding mock data to the list
-            MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
-            {
-                ProductTitle = "Premium Gasoline",
-                QRCodeImageBase64 = "qr.jpeg",
-                PurchaseDate = DateTime.Now.AddDays(-1)
-            });
-
-            MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
-            {
-                ProductTitle = "Super Diesel",
-                QRCodeImageBase64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...",
-                PurchaseDate = DateTime.Now.AddDays(-2)
-            });
-
-            // Binding the mock purchase history to the CollectionView
+            // Binding the purchase history to the CollectionView
             QRListView.ItemsSource = MockPurchaseHistory.Items;
         }
     }
@@ -33,6 +18,11 @@
         // Add a new purchase item to the list
         public static void AddPurchase(PurchaseHistoryItem item)
         {
+            // Convert the file path to ImageSource
+            if (!string.IsNullOrEmpty(item.QRCodeImageFilePath))
+            {
+                item.QRCodeImageSource = ImageSource.FromFile(item.QRCodeImageFilePath);
+            }
             Items.Add(item);
         }
     }
@@ -41,7 +31,9 @@
     public class PurchaseHistoryItem
     {
         public string ProductTitle { get; set; }
-        public string QRCodeImageBase64 { get; set; } // Base64 encoded string for the QR code image
+        public string QRCodeImageFilePath { get; set; } // Store file path instead of Base64
+        public ImageSource QRCodeImageSource { get; set; } // This will hold the ImageSource
         public DateTime PurchaseDate { get; set; }
     }
+
 }

@@ -75,7 +75,6 @@
                                        PlaceholderColor="#888"
                                        BackgroundColor="Transparent"
                                        HorizontalTextAlignment="Center"/>
-
                             </Frame>
                         </VerticalStackLayout>
 
@@ -102,7 +101,6 @@
                                        TextChanged="OnCvvChanged"/>
                             </Frame>
                         </VerticalStackLayout>
-
                         <!-- Submit Button -->
                         <Button Text="Submit"
                                 BackgroundColor="Yellow"

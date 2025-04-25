@@ -9,9 +9,9 @@
 
     <Grid>
         <!-- Background Image -->
-        <Image Source="shell.jpg"
+        <Image Source="asd.jpg"
                Aspect="AspectFill"
-               Opacity="0.3"
+               Opacity="0.6"
                IsVisible="True"/>
 
         <!-- Foreground Content -->
@@ -20,24 +20,38 @@
 
                 <!-- Welcome Banner with Background Image -->
                 <Grid HeightRequest="400" WidthRequest="1200">
-                    <Image Source="gasstationphoto.jpeg"
+                    <Image Source="banner.jpeg"
                            Aspect="AspectFill"
-                           Opacity="0.5"/>
+                           Opacity="0.9"/>
                     <HorizontalStackLayout HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            Spacing="10">
                         <Image Source="fuel_icon.png" HeightRequest="28" WidthRequest="28"/>
-                        <VerticalStackLayout HorizontalOptions="Center">
-                            <Label Text="Welcome – Your Smart Way to Find"
-                                   TextColor="Gainsboro"
-                                   FontSize="45"
+                        <VerticalStackLayout HorizontalOptions="Center" Spacing="6">
+                            <Label HorizontalTextAlignment="Center"
+                                   FontSize="48"
                                    FontFamily="Arial"
-                                   HorizontalTextAlignment="Center"/>
-                            <Label Text="and Purchase Quality Fuel Stations"
-                                   TextColor="Gainsboro"
-                                   FontSize="40"
+                                   TextColor="White"
+                                   FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Welcome – " />
+                                        <Span Text="Your Smart Way to Find" FontAttributes="Italic" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalTextAlignment="Center"
+                                   FontSize="42"
                                    FontFamily="Arial"
-                                   HorizontalTextAlignment="Center"/>
+                                   TextColor="Gold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="and Purchase " FontAttributes="Bold"/>
+                                        <Span Text="Quality Fuel Stations" FontAttributes="Bold" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </Grid>
@@ -52,8 +66,8 @@
                                            Spacing="10">
                         <Image Source="fuel_icon.png" HeightRequest="26" WidthRequest="26"/>
                         <Label Text="Fuel Products"
-                               TextColor="Gainsboro"
-                               FontSize="24"
+                               TextColor="White"
+                               FontSize="26"
                                FontAttributes="Bold"
                                FontFamily="Arial"/>
                     </HorizontalStackLayout>
@@ -62,7 +76,7 @@
                 <!-- Slider Bar (Product Pills) -->
                 <ScrollView Orientation="Horizontal"
                             HorizontalScrollBarVisibility="Never"
-                            HeightRequest="100">
+                            HeightRequest="120">
                     <FlexLayout Direction="Row"
                                 AlignItems="Center"
                                 BindableLayout.ItemsSource="{Binding Products}"
@@ -70,30 +84,45 @@
                                 Padding="10,0">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Border Stroke="#444"
-                                        WidthRequest="130"
-                                        HeightRequest="100"
-                                        StrokeThickness="2"
-                                        Background="#1a1a1a"
-                                        StrokeShape="RoundRectangle 20"
-                                        Padding="10"
-                                        Margin="10,0">
-                                    <Border.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="OnProductTapped" />
-                                    </Border.GestureRecognizers>
+                                <Grid WidthRequest="130" HeightRequest="100" Margin="10,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
 
-                                    <VerticalStackLayout Spacing="2" VerticalOptions="CenterAndExpand">
-                                        <Label Text="{Binding Title}"
-                                               TextColor="Gainsboro"
-                                               FontAttributes="Bold"
-                                               FontSize="14"
-                                               HorizontalTextAlignment="Center"/>
-                                        <Label Text="{Binding Price, StringFormat='${0:F2}'}"
-                                               TextColor="Gray"
-                                               FontSize="12"
-                                               HorizontalTextAlignment="Center"/>
-                                    </VerticalStackLayout>
-                                </Border>
+                                    <!-- Yellow Top Banner with Image -->
+                                    <Border Grid.Row="0"
+                                            BackgroundColor="Gold"
+                                            StrokeShape="RoundRectangle 20,20,0,0"
+                                            StrokeThickness="0">
+                                        <Image Source="icon.jpeg" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Border>
+
+                                    <!-- Black Content -->
+                                    <Border Grid.Row="1"
+                                            BackgroundColor="#1a1a1a"
+                                            Stroke="#444"
+                                            StrokeShape="RoundRectangle 0,0,20,20"
+                                            StrokeThickness="1"
+                                            Padding="10">
+                                        <VerticalStackLayout Spacing="4" VerticalOptions="CenterAndExpand">
+                                            <Label Text="{Binding Title}"
+                                                   TextColor="Gold"
+                                                   FontAttributes="Bold"
+                                                   FontSize="14"
+                                                   HorizontalTextAlignment="Center"/>
+                                            <Label Text="{Binding Price, StringFormat='${0:F2}'}"
+                                                   TextColor="Gray"
+                                                   FontSize="12"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </VerticalStackLayout>
+                                    </Border>
+
+                                    <!-- Gesture Recognizer -->
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnProductTapped" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </FlexLayout>
@@ -108,9 +137,9 @@
                                            VerticalOptions="Center"
                                            Spacing="10">
                         <Image Source="station_icon.png" HeightRequest="26" WidthRequest="26"/>
-                        <Label Text="Nearby Stations"
-                               TextColor="Gainsboro"
-                               FontSize="24"
+                        <Label Text="Stations"
+                               TextColor="White"
+                               FontSize="26"
                                FontAttributes="Bold"
                                FontFamily="Arial"/>
                     </HorizontalStackLayout>

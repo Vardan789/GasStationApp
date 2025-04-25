@@ -1,14 +1,55 @@
-namespace MauiApp1;
+using QRCoder;
+using System.IO;
+using Microsoft.Maui.Storage; // For FileSystem
 
-public partial class QrPage : ContentPage
+namespace MauiApp1
 {
-    public QrPage()
+    public partial class QrPage : ContentPage
     {
-        InitializeComponent();
-    }
-    
-    private async void OnDoneClicked(object sender, EventArgs e)
-    {
-        await Navigation.PopToRootAsync(); // Or navigate somewhere else as needed
+        public QrPage(string qrText)
+        {
+            InitializeComponent();
+            GenerateQr(qrText);
+        }
+
+        private void GenerateQr(string qrText)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrText, QRCodeGenerator.ECCLevel.Q);
+            PngByteQRCode qrCode = new PngByteQRCode(qrCodeData);
+
+            byte[] qrCodeAsPng = qrCode.GetGraphic(20);
+
+            // Save QR code to the AppData directory
+            string filePath = Path.Combine(FileSystem.AppDataDirectory, $"qr_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+
+            try
+            {
+                // Write the QR code to the file
+                File.WriteAllBytes(filePath, qrCodeAsPng);
+
+                // Optionally display the QR code as an image in the app
+                qrImage.Source = ImageSource.FromFile(filePath);
+
+                Console.WriteLine($"QR code saved at: {filePath}");
+
+                // Save the QR code data and metadata (file path and purchase details)
+                MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
+                {
+                    ProductTitle = "Fuel Purchase", // Customize the title as needed
+                    QRCodeImageFilePath = filePath, // Store the file path instead of Base64
+                    PurchaseDate = DateTime.Now
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving QR code: {ex.Message}");
+            }
+        }
+
+        private async void OnDoneClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
+        }
     }
 }
