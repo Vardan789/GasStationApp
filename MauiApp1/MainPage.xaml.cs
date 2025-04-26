@@ -210,7 +210,15 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
 
         StationsGridLayout.Span = DeviceInfo.Idiom == DeviceIdiom.Phone ? 2 : 4;
-        MainBannerGridLayout.WidthRequest = DeviceInfo.Idiom == DeviceIdiom.Phone ? 350 : 1200;
+        MainBannerGridLayout.WidthRequest = DeviceInfo.Idiom == DeviceIdiom.Phone ? 380 : 1200;
+        MainBannerFontSize.HorizontalOptions = DeviceInfo.Idiom == DeviceIdiom.Phone
+            ? LayoutOptions.Start : LayoutOptions.Center;
+        MainBannerFontSize.TextColor = Colors.White;
+        MainBannerFontSize.FontSize = DeviceInfo.Idiom == DeviceIdiom.Phone ? 24 : 48;
+        MainBannerFontLabel.FontSize = DeviceInfo.Idiom == DeviceIdiom.Phone ? 22 : 42;
+        MainBannerFontLabel.HorizontalOptions = DeviceInfo.Idiom == DeviceIdiom.Phone 
+            ? LayoutOptions.Start
+            : LayoutOptions.Center;;
     }
 }
 

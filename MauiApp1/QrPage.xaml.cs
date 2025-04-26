@@ -11,7 +11,7 @@ namespace MauiApp1
             GenerateQr(qrText);
         }
 
-        private void GenerateQr(string qrText)
+        private async void GenerateQr(string qrText)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrText, QRCodeGenerator.ECCLevel.Q);
@@ -32,13 +32,16 @@ namespace MauiApp1
 
                 Console.WriteLine($"QR code saved at: {filePath}");
 
-                // Save the QR code data and metadata (file path and purchase details)
-                MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
+                MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    ProductTitle = "Fuel Purchase", // Customize the title as needed
-                    QRCodeImageFilePath = filePath, // Store the file path instead of Base64
-                    PurchaseDate = DateTime.Now
+                    MockPurchaseHistory.AddPurchase(new PurchaseHistoryItem
+                    {
+                        ProductTitle = "Fuel Purchase",
+                        QRCodeImageFilePath = filePath,
+                        PurchaseDate = DateTime.Now
+                    });
                 });
+                
             }
             catch (Exception ex)
             {

@@ -19,32 +19,38 @@
             <VerticalStackLayout Padding="20" Spacing="30">
 
                 <!-- Welcome Banner with Background Image -->
-                <Grid x:Name="MainBannerGridLayout" HeightRequest="400" WidthRequest="1200">
+                <Grid x:Name="MainBannerGridLayout"
+                      HeightRequest="400"
+                      WidthRequest="1200"
+                      BackgroundColor="Black">
                     <Image Source="banner.jpeg"
                            Aspect="AspectFill"
-                           Opacity="1"/>
+                           Opacity="1"
+                           InputTransparent="True"/> 
                     <HorizontalStackLayout HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            Spacing="10">
-                        <Image Source="fuel_icon.png" HeightRequest="28" WidthRequest="28"/>
                         <VerticalStackLayout HorizontalOptions="Center" Spacing="6">
-                            <Label HorizontalTextAlignment="Center"
+                            <Label x:Name="MainBannerFontSize" 
+                                   HorizontalTextAlignment="Center"
                                    FontSize="48"
                                    FontFamily="Arial"
                                    TextColor="White"
                                    FontAttributes="Bold">
                                 <Label.FormattedText>
                                     <FormattedString>
+                                        <Span TextColor="White" />
                                         <Span Text="Welcome – " />
                                         <Span Text="Your Smart Way to Find" FontAttributes="Italic" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
 
-                            <Label HorizontalTextAlignment="Center"
+                            <Label x:Name="MainBannerFontLabel"
+                                   HorizontalTextAlignment="Center"
                                    FontSize="42"
                                    FontFamily="Arial"
-                                   TextColor="Gold">
+                                   TextColor="White">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="and Purchase " FontAttributes="Bold"/>
@@ -55,6 +61,7 @@
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </Grid>
+
 
                 <!-- Fuel Products Banner -->
                 <Grid HeightRequest="100">

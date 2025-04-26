@@ -2,69 +2,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MyQrHistory"
              Title="My QR Codes"
+             BackgroundColor="Black"
              Shell.TitleColor="Gainsboro"
              Shell.ForegroundColor="Gainsboro"
              Shell.BackgroundColor="Black">
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
+
+    <ScrollView BackgroundColor="Black">
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="Black">
+
             <!-- Page Title -->
             <Label Text="My QR Code History"
                    FontSize="28"
-                   TextColor="Gainsboro"
+                   TextColor="White"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center" 
+                   HorizontalOptions="Center"
                    Padding="0,0,0,10"/>
 
             <!-- CollectionView for QR Codes -->
-            <CollectionView x:Name="QRListView" ItemsSource="{Binding Items}" 
-                            BackgroundColor="Transparent">
+            <CollectionView x:Name="QRListView" ItemsSource="{Binding}" BackgroundColor="Transparent"
+                            SelectionMode="None" MaximumWidthRequest="1700">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2" 
+                                     HorizontalItemSpacing="20" 
+                                     VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame BorderColor="#333" BackgroundColor="#222" 
                                CornerRadius="10" Padding="15" Margin="10" HasShadow="True">
-                            <VerticalStackLayout Spacing="10">
-                                <!-- Product Title and Divider -->
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="30" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
+                            <Grid ColumnSpacing="10" RowSpacing="10">
+                                <!-- Define the Grid Structure -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/> <!-- Titles -->
+                                    <RowDefinition Height="Auto"/> <!-- QR Codes -->
+                                </Grid.RowDefinitions>
 
-                                    <Label Text="{Binding ProductTitle}" 
-                                           TextColor="White" 
-                                           FontSize="20" 
-                                           FontAttributes="Bold" 
-                                           Grid.Column="0" 
-                                           VerticalOptions="Center" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
 
-                                    <!-- Divider Line -->
-                                    <BoxView HeightRequest="2" 
-                                             BackgroundColor="Gray" 
-                                             Grid.Column="1" 
-                                             Margin="5,0" />
-                                </Grid>
+                                <!-- Left Product Title -->
+                                <Label Text="{Binding LeftItem.ProductTitle}"
+                                       TextColor="White" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalOptions="Center" />
 
-                                <!-- Purchase Date -->
-                                <Label Text="{Binding PurchaseDate, StringFormat='Purchased: {0:MM/dd/yyyy HH:mm}'}"
-                                       TextColor="Gray" 
-                                       FontSize="14" 
-                                       HorizontalOptions="Start"
-                                       Padding="0,0,0,5"/>
+                                <!-- Right Product Title -->
+                                <Label Text="{Binding RightItem.ProductTitle}"
+                                       TextColor="White" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       HorizontalOptions="Center" />
 
-                                <!-- QR Code Image -->
-                                <Image Source="{Binding QRCodeImageSource}" 
+                                <!-- Left QR Code -->
+                                <Image Source="{Binding LeftItem.QRCodeImageSource}"
                                        HeightRequest="150" 
                                        WidthRequest="150" 
-                                       Aspect="AspectFill" 
+                                       Aspect="AspectFit" 
+                                       Grid.Row="1" 
+                                       Grid.Column="0"
                                        HorizontalOptions="Center"
-                                       VerticalOptions="CenterAndExpand"/>
+                                       VerticalOptions="Center" />
 
-                            </VerticalStackLayout>
+                                <!-- Right QR Code -->
+                                <Image Source="{Binding RightItem.QRCodeImageSource}"
+                                       HeightRequest="150" 
+                                       WidthRequest="150" 
+                                       Aspect="AspectFit" 
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+
+                            </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
