@@ -34,7 +34,7 @@
                                Padding="10"
                                BorderColor="#444">
                             <Entry x:Name="NewUsernameEntry"
-                                   Placeholder="Username"
+                                   Placeholder="Username (Email)"
                                    TextColor="Gainsboro"
                                    PlaceholderColor="#888"
                                    BackgroundColor="Transparent"
@@ -57,6 +57,36 @@
                                    FontSize="18"
                                    HorizontalTextAlignment="Center" />
                         </Frame>
+
+                        <!-- Confirm Password -->
+                        <Frame BackgroundColor="#2C2C2C"
+                               CornerRadius="10"
+                               HeightRequest="50"
+                               Padding="10"
+                               BorderColor="#444">
+                            <Entry x:Name="ConfirmPasswordEntry"
+                                   Placeholder="Confirm Password"
+                                   IsPassword="True"
+                                   TextColor="Gainsboro"
+                                   PlaceholderColor="#888"
+                                   BackgroundColor="Transparent"
+                                   FontSize="18"
+                                   HorizontalTextAlignment="Center" />
+                        </Frame>
+
+                        <!-- Error Message -->
+                        <Label x:Name="ErrorLabel"
+                               TextColor="Red"
+                               IsVisible="False"
+                               HorizontalOptions="Center"
+                               FontSize="14" />
+
+                        <!-- Success Message -->
+                        <Label x:Name="SuccessLabel"
+                               TextColor="Green"
+                               IsVisible="False"
+                               HorizontalOptions="Center"
+                               FontSize="14" />
 
                         <!-- Sign Up Button -->
                         <Button Text="Sign Up"
