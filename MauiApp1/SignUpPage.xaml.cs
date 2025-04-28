@@ -1,3 +1,6 @@
+using System.Text;
+using System.Text.Json;
+
 namespace MauiApp1;
 
 public partial class SignUpPage : ContentPage
@@ -9,31 +12,20 @@ public partial class SignUpPage : ContentPage
 
     private async void OnSignUpClicked(object sender, EventArgs e)
     {
-        string username = NewUsernameEntry.Text;
+        string name = NewUsernameEntry.Text;
         string password = NewPasswordEntry.Text;
         string confirmPassword = ConfirmPasswordEntry.Text;
 
-        // Hide any previous error messages
         ErrorLabel.IsVisible = false;
-        SuccessLabel.IsVisible = false;  // Hide success message initially
+        SuccessLabel.IsVisible = false;
 
-        // Check if all fields are filled
-        if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
+        if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
         {
             ErrorLabel.Text = "Please fill in all fields.";
             ErrorLabel.IsVisible = true;
             return;
         }
 
-        // Validate email format (simple check for '@' character)
-        if (!username.Contains('@'))
-        {
-            ErrorLabel.Text = "Please enter a valid email address.";
-            ErrorLabel.IsVisible = true;
-            return;
-        }
-
-        // Check if passwords match
         if (password != confirmPassword)
         {
             ErrorLabel.Text = "Passwords do not match.";
@@ -41,7 +33,6 @@ public partial class SignUpPage : ContentPage
             return;
         }
 
-        // Simple password strength check (length >= 6)
         if (password.Length < 6)
         {
             ErrorLabel.Text = "Password must be at least 6 characters long.";
@@ -49,28 +40,48 @@ public partial class SignUpPage : ContentPage
             return;
         }
 
-        // Check if username already exists (using mock data)
-        if (!MockAuth.Users.ContainsKey(username))
+        try
         {
-            MockAuth.Users[username] = password;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("version","1");
+            client.DefaultRequestHeaders.Add("OsType","2");
+            client.BaseAddress = new Uri("https://localhost:5001");
 
-            // Show success message
-            SuccessLabel.Text = "Account created successfully!";
-            SuccessLabel.IsVisible = true;
+            var registerData = new
+            {
+                Name = name,
+                Password = password
+            };
 
-            // Navigate to the login page after 2 seconds
-            await Task.Delay(2000); // Wait for 2 seconds to display success message
-            await Navigation.PopAsync(); // Navigate back to login page
+            string json = JsonSerializer.Serialize(registerData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await client.PostAsync("/api/v1/User/Register", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                SuccessLabel.Text = "Account created successfully!";
+                SuccessLabel.IsVisible = true;
+
+                await Task.Delay(2000);
+                await Navigation.PopAsync(); // Go back to login page
+            }
+            else
+            {
+                string errorResponse = await response.Content.ReadAsStringAsync();
+                ErrorLabel.Text = $"Registration failed: {errorResponse}";
+                ErrorLabel.IsVisible = true;
+            }
         }
-        else
+        catch (Exception ex)
         {
-            ErrorLabel.Text = "Username already exists.";
+            ErrorLabel.Text = $"Error: {ex.Message}";
             ErrorLabel.IsVisible = true;
         }
     }
 
     private async void OnNavigateToLoginClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();  // Navigate back to login page
+        await Navigation.PopAsync();
     }
 }

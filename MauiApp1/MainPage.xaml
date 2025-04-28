@@ -116,7 +116,7 @@
                                             <Label Text="{Binding Title}"
                                                    TextColor="Gold"
                                                    FontAttributes="Bold"
-                                                   FontSize="14"
+                                                   FontSize="16"
                                                    HorizontalTextAlignment="Center"/>
                                             <Label Text="{Binding Price, StringFormat='${0:F2}'}"
                                                    TextColor="Gray"
@@ -178,12 +178,12 @@
                                            HeightRequest="105"
                                            Aspect="AspectFill"/>
                                     <Label Text="{Binding Title}"
-                                           FontSize="15"
+                                           FontSize="18"
                                            FontAttributes="Bold"
                                            HorizontalTextAlignment="Center"
                                            TextColor="Gainsboro"/>
                                     <Label Text="{Binding Address}"
-                                           FontSize="10"
+                                           FontSize="14"
                                            HorizontalTextAlignment="Center"
                                            TextColor="#CCCCCC"/>
                                 </VerticalStackLayout>

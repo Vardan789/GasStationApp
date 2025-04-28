@@ -1,3 +1,6 @@
+using System.Text;
+using System.Text.Json;
+
 namespace MauiApp1;
 
 public partial class LoginPage : ContentPage
@@ -7,32 +10,55 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
     }
 
-    private void OnLoginClicked(object sender, EventArgs e)
+    private async void OnLoginClicked(object sender, EventArgs e)
     {
         string username = UsernameEntry.Text;
         string password = PasswordEntry.Text;
 
-        // Check if username or password is empty or null
         if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
         {
-            // Show error if either field is empty
             ErrorLabel.Text = "Please enter both username and password.";
             ErrorLabel.IsVisible = true;
-            return;  // Exit the method early
+            return;
         }
 
-        // Check if the user exists and if the password matches
-        if (MockAuth.Users.TryGetValue(username, out string storedPass) && storedPass == password)
+        try
         {
-            // If credentials are correct, navigate to the home page (AppShell)
-            Application.Current.MainPage = new AppShell();  // Redirect to AppShell (home page)
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("version","1");
+            client.DefaultRequestHeaders.Add("OsType","2");
+            client.BaseAddress = new Uri("https://localhost:5001");
+
+            var loginData = new
+            {
+                Username = username,
+                Password = password
+            };
+
+            string json = JsonSerializer.Serialize(loginData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await client.PostAsync("/api/v1/User/Login", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Successful login
+                Application.Current.MainPage = new AppShell();
+            }
+            else
+            {
+                ErrorLabel.Text = "Invalid username or password.";
+                ErrorLabel.IsVisible = true;
+            }
         }
-        else
+        catch (Exception ex)
         {
-            ErrorLabel.Text = "Invalid username or password.";
-            ErrorLabel.IsVisible = true;  
+            // Handle error, e.g., server unreachable
+            ErrorLabel.Text = $"Error: {ex.Message}";
+            ErrorLabel.IsVisible = true;
         }
     }
+
 
     private async void OnNavigateToSignUpClicked(object sender, EventArgs e)
     {
