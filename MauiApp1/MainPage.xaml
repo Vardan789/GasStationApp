@@ -62,7 +62,6 @@
                     </HorizontalStackLayout>
                 </Grid>
 
-
                 <!-- Fuel Products Banner -->
                 <Grid HeightRequest="100">
                     <Image Source="station_background.jpg"
@@ -116,9 +115,9 @@
                                             <Label Text="{Binding Title}"
                                                    TextColor="Gold"
                                                    FontAttributes="Bold"
-                                                   FontSize="16"
+                                                   FontSize="14"
                                                    HorizontalTextAlignment="Center"/>
-                                            <Label Text="{Binding Price, StringFormat='${0:F2}'}"
+                                            <Label Text="{Binding Price, StringFormat='{0:F2} ֏'}"
                                                    TextColor="Gray"
                                                    FontSize="12"
                                                    HorizontalTextAlignment="Center"/>

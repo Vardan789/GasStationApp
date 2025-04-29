@@ -30,7 +30,8 @@
                                FontAttributes="Bold"
                                HorizontalOptions="Center"/>
 
-                        <Label Text="{Binding Price, StringFormat='Price per liter: ${0:F2}'}"
+                        <!-- Change from USD to AMD -->
+                        <Label Text="{Binding Price, StringFormat='Price per liter: {0:F2} ֏'}"
                                FontSize="20"
                                TextColor="#CCCCCC"
                                HorizontalOptions="Center"/>
