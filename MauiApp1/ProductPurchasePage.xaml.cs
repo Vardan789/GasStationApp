@@ -18,7 +18,7 @@ public partial class ProductPurchasePage : ContentPage
         {
             _liters = liters; // Update the _liters field
             var totalPrice = liters * _product.Price;
-            TotalPriceLabel.Text = $"Total: ${totalPrice:F2}";
+            TotalPriceLabel.Text = $"Total: {totalPrice:F2}֏";
         }
         else
         {
