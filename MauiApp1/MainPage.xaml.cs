@@ -37,12 +37,13 @@ public partial class MainPage : ContentPage
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("version","1");
             client.DefaultRequestHeaders.Add("OsType","2");
-            var response = await _httpClient.GetFromJsonAsync<ApiResponse<HomePageDataDto>>("https://localhost:5001/api/v1/Web/Data");
+            var response = await _httpClient.GetFromJsonAsync<ApiResponse<HomePageDataDto>>("http://localhost:5165/api/v1/Web/Data");
 
             if (response != null && response.Success)
             {
                 BindingContext = response.Data;
             }
+            
             else
             {
                 await DisplayAlert("Error", "Failed to load data from server.", "OK");

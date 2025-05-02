@@ -27,7 +27,7 @@ public partial class LoginPage : ContentPage
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("version","1");
             client.DefaultRequestHeaders.Add("OsType","2");
-            client.BaseAddress = new Uri("https://localhost:5001");
+            client.BaseAddress = new Uri("http://localhost:5165");
 
             var loginData = new
             {
@@ -38,18 +38,17 @@ public partial class LoginPage : ContentPage
             string json = JsonSerializer.Serialize(loginData);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await client.PostAsync("/api/v1/User/Login", content);
-
-            if (response.IsSuccessStatusCode)
-            {
-                // Successful login
-                Application.Current.MainPage = new AppShell();
-            }
-            else
-            {
-                ErrorLabel.Text = "Invalid username or password.";
-                ErrorLabel.IsVisible = true;
-            }
+                HttpResponseMessage response = await client.PostAsync("/api/v1/User/Login", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    // Successful login
+                    Application.Current.MainPage = new AppShell();
+                }
+                else
+                {
+                    ErrorLabel.Text = "Invalid username or password.";
+                    ErrorLabel.IsVisible = true;
+                }
         }
         catch (Exception ex)
         {

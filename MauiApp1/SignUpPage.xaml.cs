@@ -45,7 +45,7 @@ public partial class SignUpPage : ContentPage
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("version","1");
             client.DefaultRequestHeaders.Add("OsType","2");
-            client.BaseAddress = new Uri("https://localhost:5001");
+            client.BaseAddress = new Uri("http://localhost:5165");
 
             var registerData = new
             {
