@@ -152,8 +152,8 @@
                 </Grid>
 
                 <!-- Stations Grid -->
-                <CollectionView   ItemsSource="{Binding Stations}" MaximumWidthRequest="1700"
-                                 SelectionMode="None">
+                <CollectionView ItemsSource="{Binding Stations}" MaximumWidthRequest="1700"
+                                SelectionMode="None">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout x:Name="StationsGridLayout" Orientation="Vertical"
                                          Span="4"
@@ -170,8 +170,7 @@
                                     Padding="5"
                                     Margin="5">
                                 <VerticalStackLayout Spacing="10"
-                                                     HorizontalOptions="Center"
-                                                     WidthRequest="150">
+                                                     HorizontalOptions="Center">
                                     <Image Source="{Binding Image}"
                                            WidthRequest="300"
                                            HeightRequest="105"
@@ -185,6 +184,14 @@
                                            FontSize="14"
                                            HorizontalTextAlignment="Center"
                                            TextColor="#CCCCCC"/>
+
+                                    <!-- Feature Tags Label -->
+                                    <Label Text="{Binding Features}"
+                                           FontSize="12"
+                                           TextColor="Gold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"
+                                           MaxLines="0"/>
                                 </VerticalStackLayout>
                             </Border>
                         </DataTemplate>

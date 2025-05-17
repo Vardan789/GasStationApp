@@ -90,7 +90,30 @@ public class HomePageDataStationDto
     public double Lat { get; set; }
     public double Lng { get; set; }
     public string Title { get; set; }
+    public bool? HasWashing { get; set; }
+    public bool? HasShop { get; set; }
+    public bool? HasTechnicalService { get; set; }
+    public bool? HasPts { get; set; }
     public string Address { get; set; }
     public string Image { get; set; }
+    
+    public string Features
+    {
+        get
+        {
+            var features = new List<string>();
+
+            if (HasShop == true)
+                features.Add("Has Shop");
+            if (HasWashing == true)
+                features.Add("Has Washing");
+            if (HasTechnicalService == true)
+                features.Add("Has Technical Service");
+            if (HasPts == true)
+                features.Add("Has PTS");
+
+            return string.Join(" | ", features);
+        }
+    }
 }
 
